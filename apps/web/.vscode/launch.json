@@ -1,0 +1,45 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Main Process",
+			"type": "node",
+			"request": "launch",
+			"preLaunchTask": "compile:src:ts",
+			"cwd": "${workspaceRoot}",
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"program": "${workspaceRoot}/src.server/server.js",
+			"args": []
+		},
+		{
+			"name": "Test",
+			"type": "node",
+			"request": "launch",
+			"preLaunchTask": "compile:test:ts",
+			"runtimeExecutable": null,
+			"runtimeArgs": [
+				"--nolazy"
+			],
+			"stopOnEntry": false,
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"args": [
+				"--no-timeouts",
+				"--colors",
+				"--debug-brk",
+				"test/**/*.js"
+			],
+			"cwd": "${workspaceRoot}",
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"console": "internalConsole",
+			"sourceMaps": true,
+			"outFiles": [
+				"${workspaceRoot}/src*/**/*.js",
+				"${workspaceRoot}/test/**/*.js"
+			]
+		}
+	]
+}

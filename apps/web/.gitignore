@@ -1,0 +1,8 @@
+.dist
+node_modules
+src.client/**/*.d.ts
+src.client/app.*/**/*.js
+src.client/**/*.map
+src.server/**/*.d.ts
+src.server/**/*.js
+src.server/**/*.map
